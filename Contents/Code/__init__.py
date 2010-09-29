@@ -1,7 +1,4 @@
 import re, string, datetime
-from PMS import *
-from PMS.Objects import *
-from PMS.Shortcuts import *
 
 VIDEO_PREFIX      = "/video/feedme"
 IMAGE_PREFIX      = "/photos/feedme"
@@ -60,7 +57,7 @@ def Start():
   MediaContainer.art = R('art-default.png')
   DirectoryItem.thumb = R("icon-default.png")
   MediaContainer.title1 = L("title")
-  HTTP.SetCacheTime(CACHE_INTERVAL)
+  HTTP.CacheTime = CACHE_INTERVAL
 
 ####################################################################################################
 def PopulateInitialFeedList():
@@ -413,7 +410,7 @@ def ItemThumbnail(item):
     if thumb == None and len(item.xpath('description')) > 0:
         description = item.xpath('description')[0].text
         if description != None:
-            items = XML.ElementFromString(description, True).xpath('//img')
+            items = HTML.ElementFromString(description).xpath('//img')
             if len(items) > 0:
                 thumb = items[0].get('src')
     return thumb
