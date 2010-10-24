@@ -21,7 +21,9 @@
 	<key>PlexFrameworkVersion</key>
 	<string>2</string>
 	<key>PlexMediaContainer</key>
-	<string>M4V</string>
+	<array>
+		<string>M4V</string>
+	</array>
 	<key>PlexPluginMode</key>
 	<string>AlwaysOn</string>
 </dict>
