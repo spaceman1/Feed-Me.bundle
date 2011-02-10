@@ -47,14 +47,14 @@ XPATH_PREDICATE = '[starts-with(@type,"%s")]'
 ####################################################################################################
 def Start():
   PopulateInitialFeedList()
-  Plugin.AddPrefixHandler(VIDEO_PREFIX, MainMenuVideo, L("title"), "icon-default.png", "art-default.png")
-  Plugin.AddPrefixHandler(AUDIO_PREFIX, MainMenuAudio, L("title"), "icon-default.png", "art-default.png")
+  Plugin.AddPrefixHandler(VIDEO_PREFIX, MainMenuVideo, L("title"), "icon-default.png", "art-default.jpg")
+  Plugin.AddPrefixHandler(AUDIO_PREFIX, MainMenuAudio, L("title"), "icon-default.png", "art-default.jpg")
   
   # Leave images out for now. Most photo blogs I've tried don't follow the same rules as video and audio. Bit
   # more freeform, text like, so harder to parse consistently. 
-  #Plugin.AddPrefixHandler(IMAGE_PREFIX, MainMenuImages, "My RSS", "icon-default.png", "art-default.png")
+  #Plugin.AddPrefixHandler(IMAGE_PREFIX, MainMenuImages, "My RSS", "icon-default.png", "art-default.jpg")
   Plugin.AddViewGroup("Details", viewMode="InfoList", mediaType="items")
-  MediaContainer.art = R('art-default.png')
+  MediaContainer.art = R('art-default.jpg')
   DirectoryItem.thumb = R("icon-default.png")
   MediaContainer.title1 = L("title")
   HTTP.CacheTime = CACHE_INTERVAL
