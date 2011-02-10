@@ -27,11 +27,6 @@
 		<string>M4V</string>
 		<string>MP3</string>
 	</array>
-	<key>PlexAudioCodec</key>
-	<array>
-		<string>AAC</string>
-		<string>MP3</string>
-	</array>
 	<key>PlexPluginMode</key>
 	<string>AlwaysOn</string>
 </dict>
