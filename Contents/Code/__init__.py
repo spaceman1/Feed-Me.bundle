@@ -20,7 +20,7 @@ DEFAULT_AUDIO_C = "http://downloads.bbc.co.uk/podcasts/radio4/film/rss.xml"
 DEFAULT_AUDIO_D = "http://www.lonelyplanet.com/podcasts/travelcast.xml"
 
 # directory sites 
-BBC_OPML = "http://www.bbc.co.uk/radio/opml/bbc_podcast_opml.xml"
+BBC_OPML = "http://www.bbc.co.uk/podcasts.opml"
 
 NPR_OPML = "http://podcast.com/opml/npr.opml"
 NPR_THUMB = "http://media.npr.org/chrome/news/nprlogo_138x46.gif"
@@ -433,7 +433,7 @@ def FeedDirectoryList(sender):
 # BBC OPML Feed
 def BBCPodcast(sender):
   dir = MediaContainer(title2=sender.itemTitle)
-  for item in XML.ElementFromURL(BBC_OPML).xpath('/opml/body/outline/outline'):
+  for item in XML.ElementFromURL(BBC_OPML, encoding='ISO-8859-1').xpath('/opml/body/outline/outline'):
       title = item.get('fullname')
       name = item.get('text')
       if len(item.xpath("outline")) > 0:
@@ -443,7 +443,7 @@ def BBCPodcast(sender):
 #########################################################
 def BBCStationList(sender, name):
   dir = MediaContainer(viewGroup='Details', title2=sender.itemTitle)
-  stationItem = XML.ElementFromURL(BBC_OPML).xpath('/opml/body/outline/outline[@text="'+name+'"]')[0]
+  stationItem = XML.ElementFromURL(BBC_OPML, encoding='ISO-8859-1').xpath('/opml/body/outline/outline[@text="'+name+'"]')[0]
   for program in stationItem.xpath('./outline'):
       title = program.get('text')
       thumb = program.get('imageHref')
