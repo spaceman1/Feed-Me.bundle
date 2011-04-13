@@ -424,7 +424,7 @@ def FeedDirectoryList(sender):
   dir.Append(Function(DirectoryItem(NPRPodcasts, "NPR Podcasts", thumb=NPR_THUMB)))
   dir.Append(Function(DirectoryItem(OpenCulture, "Open Culture", thumb=OPEN_CULTURE_THUMB)))
   dir.Append(Function(DirectoryItem(PBSPodcasts, "PBS Podcasts", thumb=PBS_THUMB)))
-  dir.Append(Function(DirectoryItem(Podanza, "Podanza", thumb=PODANZA_THUMB)))
+#  dir.Append(Function(DirectoryItem(Podanza, "Podanza", thumb=PODANZA_THUMB)))
   dir.Append(Function(DirectoryItem(PodcastAlley, "Podcast Alley", thumb=PODCAST_ALLEY_THUMB)))
   return dir
 
